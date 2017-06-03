@@ -5,3 +5,5 @@ RUN buildDeps='build-base python-dev linux-headers' && \
     pip --no-cache-dir install smbus-cffi sensor paho-mqtt && \
     apk del $buildDeps
     
+ADD "main.py" /
+CMD ["python", "/main.py"]
