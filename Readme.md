@@ -10,8 +10,8 @@ To install as a service:
 
 To enable i2c on osmc:
 ```
-sudo modprobe i2c-bcm2708
-sudo modprobe i2c-dev
+echo "i2c-bcm2708" | sudo tee -a /etc/modules
+echo "i2c-dev" | sudo tee -a /etc/modules
 echo "dtparam=i2c_arm=on" | sudo tee -a /boot/config.txt
 sudo adduser osmc i2c
 reboot
